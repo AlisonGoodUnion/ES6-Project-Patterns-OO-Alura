@@ -60,12 +60,17 @@
     </table>
     <script src="js/app/models/Negociacao.js"></script>
     <script>
-       var hoje = new Date();
-       var n1 = new Negociacao(hoje, 5, 700);
 
-       console.log(n1._data);
-       hoje.setDate(12)
-       console.log(n1._data);
+        for (var i = 1; i<=100; i++){
+             var nome = 'test var scope';
+        }
+        alert(nome);
+
+        for (let i = 1; i<=100; i++){
+            let nome = 'Teste let**** !scope!';
+        }
+        alert(nome);
+
     </script>
 </body>
 </html>
