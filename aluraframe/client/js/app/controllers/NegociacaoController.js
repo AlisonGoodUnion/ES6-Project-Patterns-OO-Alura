@@ -10,9 +10,9 @@ class NegociacaoController {
     adiciona(event){
         event.preventDefault();
 
-        let data = this._inputData.value;
-        let dataSplit = this._inputData.value.split('-');
-        let dataReplace = this._inputData.value.replace(/-/g, ',');
+        let data = new Date(this._inputData.value);
+        let dataSplit = new Date(this._inputData.value.split('-'));
+        let dataReplace = new Date(this._inputData.value.replace(/-/g, ','));
 
         console.log(data);
         console.log(dataSplit);
