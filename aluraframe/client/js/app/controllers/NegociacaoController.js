@@ -7,23 +7,35 @@ class NegociacaoController {
         this._inputValor = $('#valor');
     }
 
-    adiciona(event){
+    adiciona(event) {
+
         event.preventDefault();
+        //Spread Operator: ... (reticências)
+        let date = new Date(
+            ...this._inputData.value
+                .split('-')
+                .map(function (item, index) {
+                    // if (index === 1) {
+                    //     //conversão implícita da string
+                    //     return item - 1;
+                    // }
+                    //
+                    //return item;
 
-        let data = new Date(this._inputData.value);
-        let dataSplit = new Date(this._inputData.value.split('-'));
-        let dataReplace = new Date(this._inputData.value.replace(/-/g, ','));
-
-        console.log(data);
-        console.log(dataSplit);
-        console.log(dataReplace);
-
-        let negociacao = new Negociacao(
-            this._inputData.value,
-            this._inputQuantidade.value,
-            this._inputValor.value
+                    //Evitando o If
+                    return item - index % 2;
+                })
         );
 
+        //simple example
+        console.log(...this._inputData.value.split('-'));
+        console.log(date);
+
+        let negociacao = new Negociacao(
+            date,
+            this._inputQuantidade,
+            this._inputValor
+        );
         console.log(negociacao);
     }
 }
