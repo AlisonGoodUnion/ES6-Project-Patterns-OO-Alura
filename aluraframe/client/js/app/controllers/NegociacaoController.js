@@ -33,8 +33,8 @@ class NegociacaoController {
 
         let negociacao = new Negociacao(
             date,
-            this._inputQuantidade,
-            this._inputValor
+            this._inputQuantidade.value,
+            this._inputValor.value
         );
         console.log(negociacao);
     }
