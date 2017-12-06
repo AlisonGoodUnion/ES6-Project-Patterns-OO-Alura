@@ -14,17 +14,8 @@ class NegociacaoController {
         let date = new Date(
             ...this._inputData.value
                 .split('-')
-                .map(function (item, index) {
-                    // if (index === 1) {
-                    //     //conversão implícita da string
-                    //     return item - 1;
-                    // }
-                    //
-                    //return item;
-
-                    //Evitando o If
-                    return item - index % 2;
-                })
+                //Omitindo bloco e utilizando arrow functions =>
+                .map((item, index) => item - index % 2 )
         );
 
         //simple example
